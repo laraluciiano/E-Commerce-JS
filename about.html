@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vandals</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/cd5f241592.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <section id="header">
+            <a href="#"> <img class="header-logo" src="./images/logo.png" alt="Vandals"></a>
+
+    <div class="header-navegation">
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a class="active" href="about.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a class="profile-page" href="cuenta.html">Cuenta</a></li>
+                <i class="fa-solid fa-xmark" id="close"></i>
+            </ul>
+        </div>
+
+        <!--Inicio modal navbar-->
+        <div id="navbar-modal">
+            <i class="fa-solid fa-bars" id="bar"></i>
+        </div>
+        <!--Fin modal navbar-->
+    
+        <div class="header-cart-avatar">
+            <div class="header-cart">
+                <img src="./images/icon-cart.svg" id="cart-icon" alt="icono de carrito">
+            </div>
+                <a id="cart" href="cuenta.html"><img class="header-acount-avatar" src="./images/image-avatar.png" alt="avatar"></a>
+        </div>
+    </div>
+    
+        <!--Inicio cart modal-->
+    <div class="cart">
+        <div class="cart-title">
+            <h2>Tu carrito</h2>
+        <div class="cart-content">
+            <div class="cart-box">
+                <img src="./images/productos/zapa 7.jpg" alt="" class="cart-img">
+                <div class="detail-box">
+                    <div class="cart-product-title">Zapatillas</div>
+                    <div class="cart-price">$25400</div>
+                    <input type="number" value="1" class="cart-quantity">
+                </div>
+                <!--Remove cart-->
+                <i class="fa-regular fa-trash-can cart-remove"></i>
+            </div>
+        </div>
+        <!--Total-->
+        <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">$0</div>
+        </div>
+        <!--Boton-->
+        <button type="button" class="btn-buy">Comprar ahora</button>
+        <!--Cierre de carrito-->
+        <i class="fa-solid fa-xmark" id="close-cart"></i>
+    </div>
+</div>
+        <!--Fin cart modal-->
+        </section>
+
+<section  id="page-header" class="about-header">
+    <h2>
+        Sobre nosotros
+    </h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+</section>
+
+<section  id="about-head" class="section-p1">
+    <img src="./images/a6.jpg" alt="">
+    <div>
+        <h2>¿Quienes somos?</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis necessitatibus illum doloribus aperiam ut accusamus ex recusandae nostrum delectus nihil eveniet eos nemo neque cum, harum dolores aliquam vel eaque!</p>
+        <abbr title="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam qui sapiente fugiat, ut voluptas. </abbr>
+        <br><br>
+        <marquee bgcolor="#ccc" loop="-1" scroolamount="5" width="100%">Lorem ips amet consectetur adipisicing elit</marquee>
+
+    </div>
+</section>
+
+<section id="feature" class="section-p1">
+    <div class="feature-box">
+        <img src="./images/features/f1.png" alt="icono de envios gratis">
+        <h6>Envios gratis</h6>
+    </div>
+
+    <div class="feature-box">
+        <img src="./images/features/f2.png" alt="icono de envios gratis">
+        <h6>Online</h6>
+    </div>
+
+    <div class="feature-box">
+        <img src="./images/features/f3.png" alt="icono de envios gratis">
+        <h6>Ahorra dinero</h6>
+    </div>
+
+    <div class="feature-box">
+        <img src="./images/features/f4.png" alt="icono de envios gratis">
+        <h6>Promociones</h6>
+    </div>
+
+    <div class="feature-box">
+        <img src="./images/features/f5.png" alt="icono de envios gratis">
+        <h6>Compra segura</h6>
+    </div>
+
+    <div class="feature-box">
+        <img src="./images/features/f6.png" alt="icono de envios gratis">
+        <h6>Soporte</h6>
+    </div>
+
+</section>
+
+<section id="newsletter" class="section-p1">
+    <div class="newstext">
+        <h4>Registrate para mas novedades</h4>
+        <p> Te hacemos llegar por mail los nuevos ingresos y <span>ofertas especiales</span></p>
+    </div>
+    <div class="newsletter-form">
+        <input type="text" placeholder="Correo Electronico">
+        <button >Registrarme</button>
+    </div>
+</section>
+
+<footer class="section-p1">
+    <div class="footer-logo-container">
+        <img class="logo" src="./images/logo2.jpg" alt="Vandals">
+    </div>
+    <div class="footer-columns">
+        <h4>Contacto</h4>
+        <p><strong>Direccion:</strong> Av. Santa Fe 3253. Alto Palermo Shopping.</p>
+        <p><strong>Celular:</strong> 11 3430 2308</p>
+        <p><strong>Horarios:</strong> 10 a 18, Lunes a Sabados</p>
+        <div class="social-media">
+            <h4>Seguinos</h4>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+    </div>
+
+    <div class="footer-columns">
+        <h4>Sobre nosotros</h4>
+        <a href="nosotros.html">Sobre Nosotros</a>
+        <a href="#">Envios</a>
+        <a href="#">Politica de Privacidad</a>
+        <a href="#">Terminos y condiciones</a>
+        <a href="contacto.html">Contactanos</a>
+    </div>
+
+    <div class="footer-columns">
+        <h4>Mi cuenta</h4>
+        <a href="cuenta.html">Registrarme</a>
+        <a href="#">Seguir mi orden</a>
+        <a href="#">Ayuda</a>
+    </div>
+
+    <div class="footer-columns-pay">
+        <p>Pagos seguros con</p>
+        <img src="./images/pay/pay.png" alt="">
+    </div>
+
+    <div class="copyright">
+        <p>© 2023, Lara's - Ecommerce HTML-CSS-JS</p>
+
+    </div>
+
+</footer>
+
+<script src="./script.js"></script>
+</main>
+</body>
+</html>
