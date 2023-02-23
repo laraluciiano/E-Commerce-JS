@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vandals</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/cd5f241592.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <section id="header">
+            <a href="#"> <img class="header-logo" src="./images/logo.png" alt="Vandals"></a>
+    
+    <div class="header-navegation">
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a class="profile-page" href="cuenta.html">Cuenta</a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+    
+        <!--Inicio modal navbar-->
+        <div id="navbar-modal">
+            <i class="fa-solid fa-bars" id="bar"></i>
+        </div>
+        <!--Fin modal navbar-->
+    
+        <div class="header-cart-avatar">
+            <div class="header-cart">
+                <img src="./images/icon-cart.svg" id="cart-icon">
+            </div>
+                <a id="cart" href="cuenta.html"><img class="header-acount-avatar" src="./images/image-avatar.png" alt="avatar"></a>
+        </div>
+    </div>
+    
+        <!--Inicio cart modal-->
+    <div class="cart">
+        <div class="cart-title">Tu carrito
+        <div class="cart-content">
+            <div class="cart-box">
+                <img src="./images/productos/zapa 7.jpg" alt="" class="cart-img">
+                <div class="detail.box">
+                    <div class="cart-product-title">Zapatillas</div>
+                    <div class="cart-price">$25400</div>
+                    <input type="number" value="1" class="cart-quantity">
+                </div>
+                <!--Remove cart-->
+                <button class= "cart-remove">
+                <i class="fa-regular fa-trash-can"></i>
+                </button>
+            </div>
+        </div>
+        <!--Total-->
+        <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">0</div>
+        </div>
+        <!--Boton-->
+        <button type="button" class="btn-buy">Comprar ahora</button>
+        <!--Cierre de carrito-->
+        <i class="fa-solid fa-xmark" id="close-cart"></i>
+    </div>
+</div>
+        <!--Fin cart modal-->
+        </section>
+
+<section class="account-page-container">
+    <div class="container-form sign-up">
+        <div class="welcome-back">
+            <div class="message">
+                <h2>Bienvenido a Vandals</h2>
+                <p>Si ya tienes una cuenta por favor inicia sesion aqui</p>
+                <button class="sign-up-btn">Iniciar sesion</button>
+            </div>
+        </div>
+        <form action="" class="form">
+            <h2 class="create-account">Crear una cuenta</h2>
+            <div class="icons">
+                <div class="border-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+
+                <div class="border-icon">
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+
+                <div class="border-icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+            </div>
+            <p class="free-account">Crear una cuenta gratis</p>
+            <input type="text" placeholder="Nombre">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Contraseña">
+            <input type="button" value="Registrarse">
+        </form>
+    </div>
+
+    <div class="container-form sign-in">
+        <form action="" class="form">
+            <h2 class="create-account">Iniciar Sesion</h2>
+            <div class="icons">
+                <div class="border-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+
+                <div class="border-icon">
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+
+                <div class="border-icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+            </div>
+            <p class="free-account">¿Aun no tenes una cuenta?</p>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Contraseña">
+            <input type="button" value="Iniciar sesion">
+        </form>
+        <div class="welcome-back">
+            <div class="message">
+                <h2>Bienvenido de nuevo</h2>
+                <p>Si aun no tenes una cuenta registrate!</p>
+                <button class="sign-in-btn">Registrarse</button>
+            </div>
+        </div>
+</section>
+
+<script>
+    const $btnSignIn= document.querySelector('.sign-in-btn'),
+      $btnSignUp = document.querySelector('.sign-up-btn'),  
+      $signUp = document.querySelector('.sign-up'),
+      $signIn  = document.querySelector('.sign-in');
+
+document.addEventListener('click', e => {
+    if (e.target === $btnSignIn || e.target === $btnSignUp) {
+        $signIn.classList.toggle('active');
+        $signUp.classList.toggle('active')
+    }
+});
+</script>
+</main>
+</body>
+</html>
