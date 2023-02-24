@@ -72,64 +72,16 @@ if (close) {
     //Variable para obtener el producto del localstorage
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-
-    //FUNCIONES
-
     //Guardar el carrito en el localStorage
     const saveLocalStorage = (cartList) => {
   localStorage.setItem("cart", JSON.stringify(cartList));
 };
-    
+
+
+
     function ready(){
-    //Quitar items del carrito
-    const removeCartButtons = document.getElementsByClassName(".cart-remove")
-    console.log(removeCartButtons)
-    for (let i = 0; i< removeCartButtons.length; i++){
-        let button = removeCartButtons[i]
-        button.addEventListener("click", removeCartItem)
-    }
-
-    function removeCartItem (event){
-    const buttonClicked = event.target
-    buttonClicked.parentElement.remove()
-        updateTotal();
-    }
-
-    //Cantidad cambiada
-    function quantityChanged(event){
-        let input = event.target
-        if (isNaN(input.value) || input.value <=0) {
-            input.value = 1
-        }
-        updateTotal();
-    }
-
-    //Actualizar total
-    function updateTotal(){
-        let cartContent = document.getElementsByClassName(".cart-content")[0]
-        let cartBoxes = cartContent.getElementsByClassName(".cart-box")
-        let total = 0;
-        for (let i = 0; i< cartBoxes.length; i++){
-            let cartBox = cartBoxes[i]
-            let priceElement = cartBox.getElementsByClassName(".cart-price")[0]
-            let quantityElement = cartBox.getElementsByClassName(".cart-quantity")[0]
-            let price = parseFloat (priceElement.innerText.replace("$", ""));
-            let quantity = quantityElement.value
-            total = total + (price * quantity);
-
-            document.getElementsByClassName(".total-price")[0].innerText = '$' + total;
-        }
-    }
-    
-    //Cambios en cantidad
-    let quantityInputs = document.getElementsByClassName(".cart-quantity")
-    for (let i = 0; i< quantityInputs.length; i++){
-        let input = quantityInputs[i]
-        input.addEventListener('change', quantityChanged)
-    }
-
     //Agregar al carrito
-    let addCart = document.getElementsByClassName('add-cart');
+    let addCart = document.getElementsByClassName('fa-cart-shopping');
     for (let i = 0; i< addCart.length; i++){
         let button = addCart[i]
         button.addEventListener('click', addCartClicked);
@@ -138,6 +90,25 @@ if (close) {
     //Hacer que el boton funcione
     document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked);
     }
+
+    function updateTotal() {
+  let totalPrice = 0;
+  let cartItems = document.querySelectorAll('.cart-box');
+  
+  cartItems.forEach((cartItem) => {
+    let priceElement = cartItem.querySelector('.cart-price');
+    if (priceElement) { // Verificar si el elemento de precio existe
+      let price = parseFloat(priceElement.innerText.replace('$', ''));
+      let quantity = cartItem.querySelector('.cart-quantity').value;
+      totalPrice += price * quantity;
+    }
+  });
+  
+  let totalElement = document.querySelector('.total-price');
+  if (totalElement) {
+    totalElement.innerText = '$' + totalPrice.toFixed(2);
+  }
+}
     
     //Boton de compra
     function buyButtonClicked(){
@@ -183,6 +154,41 @@ if (close) {
     cartShopBox.innerHTML = cartBoxContent;
     cartItems.append(cartShopBox);
 
-    cartShopBox.getElementsByClassName('cart-remove')[0].addEventListener("click", removeCartItem);
-    cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener("change", quantityChanged);
+}
+
+// Seleccionar todos los botones de eliminación del carrito
+const removeCartItemButtons = document.querySelectorAll('.cart-remove');
+
+// Iterar sobre cada botón de eliminación y agregar un event listener
+removeCartItemButtons.forEach(button => {
+  button.addEventListener('click', removeCartItem);
+});
+
+// Función que se ejecuta cuando se hace clic en el botón de eliminación
+function removeCartItem(event) {
+  // Seleccionar el elemento del carrito que se va a eliminar
+  const buttonClicked = event.target;
+  const cartItem = buttonClicked.closest('.cart-box');
+  cartItem.remove();
+  updateTotal();
+}
+
+// Función para actualizar el total del carrito
+function updateCartTotal() {
+  // Seleccionar todos los elementos de precio en el carrito
+  const cartItems = document.querySelectorAll('.cart-box');
+  let total = 0;
+
+  // Iterar sobre cada elemento del carrito y sumar el precio
+  cartItems.forEach(cartItem => {
+    const priceElement = cartItem.querySelector('.cart-price');
+    const quantityElement = cartItem.querySelector('.cart-quantity');
+    const price = parseFloat(priceElement.textContent.replace('$', ''));
+    const quantity = quantityElement.value;
+    total += price * quantity;
+  });
+
+  // Actualizar el total en la página
+  const totalElement = document.querySelector('.total-price');
+  totalElement.textContent = '$' + total;
 }
