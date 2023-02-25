@@ -79,53 +79,123 @@ if (close) {
 
 
 
-    function ready(){
+function ready() {
     //Agregar al carrito
-    let addCart = document.getElementsByClassName('fa-cart-shopping');
-    for (let i = 0; i< addCart.length; i++){
-        let button = addCart[i]
-        button.addEventListener('click', addCartClicked);
+    let addCart = document.getElementsByClassName("fa-cart-shopping");
+    for (let i = 0; i < addCart.length; i++) {
+      let button = addCart[i];
+      button.addEventListener("click", addCartClicked);
     }
-
+  
     //Hacer que el boton funcione
-    document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked);
-    }
-
-    function updateTotal() {
-  let totalPrice = 0;
-  let cartItems = document.querySelectorAll('.cart-box');
+    document.getElementsByClassName("btn-buy")[0].addEventListener("click", buyButtonClicked);
   
-  cartItems.forEach((cartItem) => {
-    let priceElement = cartItem.querySelector('.cart-price');
-    if (priceElement) { // Verificar si el elemento de precio existe
-      let price = parseFloat(priceElement.innerText.replace('$', ''));
-      let quantity = cartItem.querySelector('.cart-quantity').value;
-      totalPrice += price * quantity;
+    //Agregar listeners para los botones de sumar y restar
+    let inputNumber = document.querySelectorAll(".input__number");
+    for (let i = 0; i < inputNumber.length; i++) {
+      let input = inputNumber[i];
+      input.addEventListener("change", quantityChanged);
     }
-  });
   
-  let totalElement = document.querySelector('.total-price');
-  if (totalElement) {
-    totalElement.innerText = '$' + totalPrice.toFixed(2);
+    let inputMinus = document.querySelectorAll(".input__minus");
+    for (let i = 0; i < inputMinus.length; i++) {
+      let minus = inputMinus[i];
+      minus.addEventListener("click", minusClicked);
+    }
+  
+    let inputPlus = document.querySelectorAll(".input__plus");
+    for (let i = 0; i < inputPlus.length; i++) {
+      let plus = inputPlus[i];
+      plus.addEventListener("click", plusClicked);
+    }
   }
-}
-    
-    //Boton de compra
-    function buyButtonClicked(){
-        alert('Tu compra esta realizada')
-        let cartContent = document.getElementsByClassName('cart-content')[0]
-        while (cartContent.hasChildNodes()){
-            cartContent.removeChild(cartContent.firstChild);
-        }
-        updateTotal();
+  
+  //Función para actualizar el precio total
+  function updateTotal() {
+    let totalPrice = 0;
+    let cartItems = document.querySelectorAll(".cart-box");
+  
+    cartItems.forEach((cartItem) => {
+      let priceElement = cartItem.querySelector(".cart-price");
+      if (priceElement) {
+        let price = parseFloat(priceElement.innerText.replace("$", ""));
+        let quantity = cartItem.querySelector(".input__number").value;
+        totalPrice += price * quantity;
+      }
+    });
+  
+    let totalElement = document.querySelector(".total-price");
+    if (totalElement) {
+      totalElement.innerText = "$" + totalPrice.toFixed(2);
     }
-    
-    //Añadir al carrito
-    function addCartClicked(event){
-        let button = event.target
-        let shopProducts = button.parentElement
-        let title = shopProducts.getElementsByClassName("product-title")[0].innerText;
-        let price = shopProducts.getElementsByClassName("price")[0].innerText;
+  }
+  
+  //Función para cambiar la cantidad de productos
+  function quantityChanged(event) {
+    let input = event.target;
+    if (isNaN(input.value) || input.value <= 0) {
+      input.value = 1;
+    }
+    updateTotal();
+  }
+  
+  //Función para restar productos
+  function minusClicked(event) {
+    let button = event.target;
+    let input = button.parentElement.querySelector(".input__number");
+    let value = parseInt(input.value);
+    if (value > 1) {
+      input.value = value - 1;
+      updateTotal();
+    }
+  }
+  
+  //Función para sumar productos
+  function plusClicked(event) {
+    let button = event.target;
+    let input = button.parentElement.querySelector(".input__number");
+    let value = parseInt(input.value);
+    input.value = value + 1;
+    updateTotal();
+  }
+  
+  //Boton de compra
+  function buyButtonClicked() {
+    alert("Tu compra esta realizada");
+    let cartContent = document.getElementsByClassName("cart-content")[0];
+    while (cartContent.hasChildNodes()) {
+      cartContent.removeChild(cartContent.firstChild);
+    }
+    updateTotal();
+  }
+
+  // Seleccionar el botón "vaciar carrito"
+const clearCartButton = document.querySelector(".btn-empty");
+
+// Agregar listener al botón "vaciar carrito"
+clearCartButton.addEventListener("click", clearCart);
+
+// Función para vaciar el carrito
+function clearCart() {
+  // Seleccionar todos los elementos del carrito
+  const cartItems = document.querySelectorAll(".cart-box");
+
+  // Eliminar cada elemento del carrito uno por uno
+  cartItems.forEach((cartItem) => {
+    cartItem.remove();
+  });
+
+  // Actualizar el precio total a 0
+  const totalElement = document.querySelector(".total-price");
+  totalElement.innerText = "$0.00";
+}
+  
+  //Añadir al carrito
+  function addCartClicked(event) {
+    let button = event.target;
+    let shopProducts = button.parentElement;
+    let title = shopProducts.getElementsByClassName("product-title")[0].innerText;
+    let price = shopProducts.getElementsByClassName("price")[0].innerText;
         let productImg = shopProducts.getElementsByClassName("product-image")[0].src;
         addProductToCart(title,price, productImg);
         updateTotal();
@@ -147,48 +217,14 @@ if (close) {
         <div class="detail-box">
             <div class="cart-product-title">${title}</div>
             <div class="cart-price">${price}</div>
-            <input type="number" value="1" class="cart-quantity">
-        </div>
-        <!--Remove cart-->
-        <i class="fa-regular fa-trash-can cart-remove"></i>`;
+            <div class="details__product-quantity">
+            <div class="input">
+              <img class="input__minus" src="./images/icon-minus.svg" alt="minus">
+              <input class="input__number" type="text" value="0">
+              <img class="input__plus" src="./images/icon-plus.svg" alt="plus">
+            </div>
+            </div>
+            </div>`;
     cartShopBox.innerHTML = cartBoxContent;
     cartItems.append(cartShopBox);
-
-}
-
-// Seleccionar todos los botones de eliminación del carrito
-const removeCartItemButtons = document.querySelectorAll('.cart-remove');
-
-// Iterar sobre cada botón de eliminación y agregar un event listener
-removeCartItemButtons.forEach(button => {
-  button.addEventListener('click', removeCartItem);
-});
-
-// Función que se ejecuta cuando se hace clic en el botón de eliminación
-function removeCartItem(event) {
-  // Seleccionar el elemento del carrito que se va a eliminar
-  const buttonClicked = event.target;
-  const cartItem = buttonClicked.closest('.cart-box');
-  cartItem.remove();
-  updateTotal();
-}
-
-// Función para actualizar el total del carrito
-function updateCartTotal() {
-  // Seleccionar todos los elementos de precio en el carrito
-  const cartItems = document.querySelectorAll('.cart-box');
-  let total = 0;
-
-  // Iterar sobre cada elemento del carrito y sumar el precio
-  cartItems.forEach(cartItem => {
-    const priceElement = cartItem.querySelector('.cart-price');
-    const quantityElement = cartItem.querySelector('.cart-quantity');
-    const price = parseFloat(priceElement.textContent.replace('$', ''));
-    const quantity = quantityElement.value;
-    total += price * quantity;
-  });
-
-  // Actualizar el total en la página
-  const totalElement = document.querySelector('.total-price');
-  totalElement.textContent = '$' + total;
 }

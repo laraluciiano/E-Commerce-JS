@@ -17,10 +17,9 @@
     <div class="header-navegation">
         <div>
             <ul id="navbar">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about.html">Nosotros</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#products-featured">Shop</a></li>
+                <li><a href="#contact-details">Contacto</a></li>
                 <li><a class="profile-page" href="cuenta.html">Cuenta</a></li>
                 <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
             </ul>
@@ -55,9 +54,11 @@
         </div>
         <!--Boton-->
         <button type="button" class="btn-buy">Comprar ahora</button>
+        <button type="button" class="btn-empty">Vaciar carrito</button>
         <!--Cierre de carrito-->
         <i class="fa-solid fa-xmark" id="close-cart"></i>
     </div>
+</div>
 </div>
         <!--Fin cart modal-->
         </section>
@@ -104,139 +105,182 @@
 
 </section>
 
-<section id="products-featured" class="section-p1">
-    <h2>Productos destacados</h2>
-    <p>Elegi tu estilo para llevarlo de la mejor manera</p>
-    <div class="products-container">
-        <div class="products" onclick="window.location.href='sproducts.html';">
-            <img src="./images/productos/zapa 7.jpg" alt="zapatillas nike">
-            <div class="product-description" onclick="window.location.href='sproduct.html';">
-                <span>nike</span>
-                <h5>Zapatillas Nike Air Max Sc</h5>
-                <h4>$25400</h4>
-            </div>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-
-        <div class="products">
-            <img src="./images/productos/camisa 3.jpg" alt="zapatillas nike">
-            <div class="product-description">
-                <span>nike</span>
-                <h5>CAMISA THE GANG [ NEGRO ]</h5>
-                <h4>$12000</h4>
-            </div>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-
-        <div class="products">
-            <img src="./images/productos/zapa 8.jpg" alt="zapatillas osiris">
-            <div class="product-description">
-                <span>osiris</span>
-                <h5>Zapatillas Osiris D3 2001 Black Black</h5>
-                <h4>$34500</h4>
-            </div>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-
-        <div class="products">
-            <img src="./images/productos/remera 3.jpg" alt="remera con hongos">
-            <div class="product-description">
-                <span>manki</span>
-                <h5>Remera OS Zetas Negra</h5>
-                <h4>$8700</h4>
-            </div>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-
-        <div class="products">
-            <img src="./images/productos/camisa 1.jpg" alt="camisa luxo de colores">
-            <div class="product-description">
-                <span>luxo</span>
-                <h5>CAMISA CLIMAX [ PRINT J8 ]</h5>
-                <h4>$11500</h4>
-            </div>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-
-        <div class="products">
-            <img src="./images/productos/zapa 5.jpg" alt="zapatillas adidas">
-            <div class="product-description">
-                <span>adidas</span>
-                <h5>Zapatillas ZX 22 BOOST</h5>
-                <h4>$30500</h4>
-            </div>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-
-        <div class="products">
-            <img src="./images/productos/remera 1.jpg" alt="remera luxo">
-            <div class="product-description">
-                <span>luxo</span>
-                <h5>REMERA META ART GALLERY FABA 04 [ BLANCO ]</h5>
-                <h4>$8200</h4>
-            </div>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-
-        <div class="products">
-            <img src="./images/productos/zapa 6.jpg" alt="zapatillas adidas">
-            <div class="product-description">
-                <span>adidas</span>
-                <h5>Zapatillas ZX 22 BOOST</h5>
-                <h4>$30500</h4>
-            </div>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
+<section id="products-featured" class="section-p1" >
+    <div class = "title">
+        <h1>Productos destacados</h1>
     </div>
 
-</section>
-
-<section id="products-featured" class="section-p1">
-    <h2>Nuevos ingresos</h2>
-    <p>Nuevas zapatillas para unas vacaciones mas comodas</p>
-    <div class="products-container">
-        <div class="products">
-            <img src="./images/productos/zapa 4.jpg" alt="zapatillas nike">
-            <div class="product-description">
-                <span>adidas</span>
-                <h5>ZAPATILLAS OZELIA</h5>
-                <h4>$25999</h4>
-            </div>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div> 
-
-        <div class="products">
-            <img src="./images/productos/zapa 1.jpg" alt="zapatillas nike">
-            <div class="product-description">
-                <span>adidas</span>
-                <h5>ZAPATILLAS FORUM LOW VEGAN</h5>
-                <h4>$32100</h4>
-            </div>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-
-        <div class="products">
-            <img src="./images/productos/zapa 3.jpg" alt="zapatillas nike">
-            <div class="product-description">
-                <span>adidas</span>
-                <h5>ZAPATILLAS FORUM BOLD</h5>
-                <h4>$37600</h4>
-            </div>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-
-        <div class="products">
-            <img src="./images/productos/zapa 2.jpg" alt="zapatillas nike">
-            <div class="product-description">
-                <span>adidas</span>
-                <h5>ZAPATILLAS OZNOVA</h5>
-                <h4>$40000</h4>
-            </div>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
+    <div class = "filter-btns">
+        <button type = "button" class = "filter-btn-singular" id = "todo">TODO</button>
+        <button type = "button" class = "filter-btn-singular" id = "zapatillas">ZAPATILLAS</button>
+        <button type = "button" class = "filter-btn-singular" id = "camisas">CAMISAS</button>
+        <button type = "button" class = "filter-btn-singular" id = "remeras">REMERAS</button>
     </div>
 
+<div class="products-container">
+<div class="products todo zapatillas">
+<img src="./images/productos/zapa 7.jpg" alt="zapatillas nike" class="product-image">
+<div class="product-description">
+    <span>nike</span>
+    <h5 class="product-title">Zapatillas Nike Air Max Sc</h5>
+    <h4 class="price">$25400</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div>
+
+<div class="products todo camisas">
+<img src="./images/productos/camisa 3.jpg" alt="camisa" class="product-image">
+<div class="product-description">
+    <span>luxo</span>
+    <h5 class="product-title">CAMISA THE GANG [ NEGRO ]</h5>
+    <h4 class="price">$12000</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div>
+
+<div class="products todo zapatillas">
+<img src="./images/productos/zapa 8.jpg" alt="zapatillas osiris" class="product-image">
+<div class="product-description">
+    <span>osiris</span>
+    <h5 class="product-title">Zapatillas Osiris D3 2001 Black Black</h5>
+    <h4 class="price">$34500</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div>
+
+<div class="products todo remeras">
+<img src="./images/productos/remera 3.jpg" alt="remera con hongos" class="product-image">
+<div class="product-description">
+    <span>manki</span>
+    <h5 class="product-title">Remera OS Zetas Negra</h5>
+    <h4 class="price">$8700</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div>
+
+<div class="products todo camisas">
+<img src="./images/productos/camisa 1.jpg" alt="camisa luxo de colores" class="product-image">
+<div class="product-description">
+    <span>luxo</span>
+    <h5 class="product-title">CAMISA CLIMAX [ PRINT J8 ]</h5>
+    <h4 class="price">$11500</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div>
+
+<div class="products todo zapatillas">
+<img src="./images/productos/zapa 5.jpg" alt="zapatillas adidas" class="product-image">
+<div class="product-description">
+    <span>adidas</span>
+    <h5 class="product-title">Zapatillas ZX 22 BOOST</h5>
+    <h4 class="price">$30500</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div>
+
+<div class="products todo remeras">
+<img src="./images/productos/remera 1.jpg" alt="remera luxo" class="product-image">
+<div class="product-description">
+    <span>luxo</span>
+    <h5 class="product-title">REMERA META ART GALLERY FABA 04 [ BLANCO ]</h5>
+    <h4 class="price">$8200</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div>
+
+<div class="products todo zapatillas">
+<img src="./images/productos/zapa 6.jpg" alt="zapatillas adidas" class="product-image">
+<div class="product-description">
+    <span>adidas</span>
+    <h5 class="product-title">Zapatillas ZX 22 BOOST</h5>
+    <h4 class="price">$30500</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div>
+
+<div class="products todo zapatillas">
+<img src="./images/productos/zapa 4.jpg" alt="zapatillas nike" class="product-image">
+<div class="product-description">
+    <span>adidas</span>
+    <h5 class="product-title">ZAPATILLAS OZELIA</h5>
+    <h4 class="price">$25999</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div> 
+
+<div class="products todo zapatillas">
+<img src="./images/productos/zapa 1.jpg" alt="zapatillas nike" class="product-image">
+<div class="product-description">
+    <span>adidas</span>
+    <h5 class="product-title">ZAPATILLAS FORUM LOW VEGAN</h5>
+    <h4 class="price">$32100</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div>
+
+<div class="products todo zapatillas">
+<img src="./images/productos/zapa 3.jpg" alt="zapatillas nike" class="product-image">
+<div class="product-description">
+    <span>adidas</span>
+    <h5 class="product-title">ZAPATILLAS FORUM BOLD</h5>
+    <h4 class="price">$37600</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div>
+
+<div class="products todo zapatillas">
+<img src="./images/productos/zapa 2.jpg" alt="zapatillas nike" class="product-image">
+<div class="product-description">
+    <span>adidas</span>
+    <h5 class="product-title">ZAPATILLAS OZNOVA</h5>
+    <h4 class="price">$40000</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div>
+
+<div class="products todo camisas">
+<img src="./images/productos/camisa 5.jpg" alt="luxo" class="product-image">
+<div class="product-description">
+    <span>luxo</span>
+    <h5 class="product-title">CAMISA CLIMAX [ PRINT J19 ]</h5>
+    <h4 class="price">$10660</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div>
+
+
+<div class="products todo camisas">
+<img src="./images/productos/camisa 6.jpg" alt="luxo" class="product-image">
+<div class="product-description">
+    <span>luxo</span>
+    <h5 class="product-title">CAMISA CLIMAX [ PRINT J20 ]</h5>
+    <h4 class="price">$10660</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div>
+
+<div class="products todo camisas">
+<img src="./images/productos/camisa 7.jpg" alt="luxo" class="product-image">
+<div class="product-description">
+    <span>luxo</span>
+    <h5 class="product-title">CAMISA AFRO [ OLIVA ]</h5>
+    <h4 class="price">$17760</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div>
+
+<div class="products todo remeras">
+<img src="./images/productos/remera 2.jpg" alt="luxo" class="product-image">
+<div class="product-description">
+    <span>luxo</span>
+    <h5 class="product-title">REMERA META ART GALLERY FABA 02 [ BLANCO ]</h5>
+    <h4 class="price">$17760</h4>
+</div>
+<i class="fa-solid fa-cart-shopping add-cart" id="add"></i></a>
+</div>
+</div>
 </section>
+
 
 <section id="newsletter" class="section-p1">
     <div class="newstext">
@@ -247,6 +291,50 @@
         <input type="text" placeholder="Correo Electronico">
         <button >Registrarme</button>
     </div>
+</section>
+
+<section id="contact-details" class="section-p1">
+    <div class="details">
+        <span>Ponte en contacto</span>
+        <h2>Visitanos en nuestra tienda fisica o contactanos </h2>
+        <h3>Local</h3>
+        <div>
+            <li>
+                <i class="fa-solid fa-map-location-dot"></i>
+                <p>Av. Santa Fe 3253. Alto Palermo Shopping.</p>
+            </li>
+            <li>
+                <i class="fa-regular fa-envelope"></i>
+                <p>vandalshop@gmail.com</p>
+            </li>
+            <li>
+                <i class="fa-solid fa-phone"></i>
+                <p>11 3430 2308</p>
+            </li>
+            <li>
+                <i class="fa-regular fa-clock"></i>
+                <p>10 a 18, Lunes a Sabados</p>
+            </li>
+        </div>
+    </div>
+
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13138.505227413154!2d-58.410757!3d-34.588321!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca83d2aa1521%3A0xc7a941fe0d021ba0!2sAlto%20Palermo%20Shopping!5e0!3m2!1ses!2sar!4v1676339259977!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+</section>
+
+<section id="form-details">
+    <form action="">
+        <span>DEJANOS UN MENSAJE</span>
+        <h2>Nos encantaria saber de ti</h2>
+        <input type="text" placeholder="Tu nombre">
+        <input type="text" placeholder="Mail">
+        <input type="text" placeholder="Asunto">
+        <textarea name="" id="" cols="30" rows="10" placeholder="Tu mensaje"></textarea>
+        <button class="button.normal">Enviar</button>
+    </form>
+
 </section>
 
 <footer class="section-p1">
@@ -293,6 +381,8 @@
     </div>
 
 </footer>
+
+<div class="add-modal"></div>
 
 <script src="script.js"></script>
 
