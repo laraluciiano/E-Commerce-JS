@@ -138,19 +138,19 @@ const totalElement = document.querySelector('.total-price');
 
 // Función para calcular el precio total
 function updateTotal() {
-  let precioTotal = 0;
+  let TotalPrice = 0;
 
   // Seleccionar todos los elementos de precio individuales
-  const preciosIndividuales = document.querySelectorAll('.cart-price');
+  const priceElement = document.querySelectorAll('.cart-price');
 
   // Recorrer los elementos de precio y sumarlos
-  for (let i = 0; i < preciosIndividuales.length; i++) {
-    const precio = parseFloat(preciosIndividuales[i].innerText.replace('$', ''));
-    precioTotal += precio;
+  for (let i = 0; i < priceElement.length; i++) {
+    const precio = parseFloat(priceElement[i].innerText.replace('$', ''));
+    TotalPrice += precio;
   }
 
   // Actualizar la etiqueta del precio total
-  totalElement.innerText = '$' + precioTotal.toFixed(2);
+  totalElement.innerText = '$' + TotalPrice.toFixed(2);
 }
 
 // Llamar a la función de cálculo de precio total
@@ -167,6 +167,15 @@ updateTotal();
   }
 
   
+
+
+
+
+
+
+
+
+
 
   // Seleccionar el botón "vaciar carrito"
 const clearCartButton = document.querySelector(".btn-empty");
