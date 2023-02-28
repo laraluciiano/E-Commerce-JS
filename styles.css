@@ -305,6 +305,9 @@
     cursor: pointer;
   }
   
+  .cart-subtotal{
+    display: grid;
+  }
 
     /*Estilos en el Hero */
 

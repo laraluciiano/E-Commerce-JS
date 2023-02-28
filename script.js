@@ -123,7 +123,7 @@ let cartBoxContent = `
         </div>`;
 cartShopBox.innerHTML = cartBoxContent;
 cartItems.append(cartShopBox);
-}
+
 
 //Hacer que el boton funcione
 document.getElementsByClassName("btn-buy")[0].addEventListener("click", buyButtonClicked);
@@ -175,9 +175,12 @@ plusButtons.forEach((input, index) => {
     totalElement.innerText = `$${totalPrice}`;
   });
 });
+updateTotal();
+}
 
 //CALCULAR PRECIO TOTAL
 function updateTotal() {
+const totalElement = document.querySelector(".total-price");
   let TotalPrice = 0;
 
   // Seleccionar todos los elementos de precio individuales
