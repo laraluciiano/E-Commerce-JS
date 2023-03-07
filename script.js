@@ -153,9 +153,11 @@ minusButtons.forEach((input, index) => {
       inputNumbers[index].value = currentValue;
 
       // restar el precio del producto del precio total
-      totalPrice -= parseInt(totalElement.innerText.slice(1));
-      totalElement.innerText = `$${totalPrice}`;
+      let priceElement = input.closest(".cart-item").querySelector(".cart-price");
+      totalPrice -= parseFloat(priceElement.innerText.replace("$", ""));
+      totalElement.innerText = `$${totalPrice.toFixed(2)}`;
     }
+    updateTotal();
   });
 });
 
@@ -171,11 +173,12 @@ plusButtons.forEach((input, index) => {
     inputNumbers[index].value = currentValue;
 
     // sumar el precio del producto al precio total
-    totalPrice += parseInt(totalElement.innerText.slice(1));
-    totalElement.innerText = `$${totalPrice}`;
+    let priceElement = input.closest(".cart-item").querySelector(".total-price");
+    totalPrice += parseFloat(priceElement.innerText.replace("$", ""));
+    totalElement.innerText = `$${totalPrice.toFixed(2)}`;
+    updateTotal();
   });
 });
-updateTotal();
 }
 
 //CALCULAR PRECIO TOTAL
