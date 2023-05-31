@@ -111,10 +111,6 @@
     width: 70px;
   }
 
-  .header-cart {
-    position: relative;
-  }
-
   .header-cart--notification {
     display: none;
     background-color: #284184;
@@ -338,6 +334,14 @@
       cursor: pointer;
       font-weight: 700;
       font-size: 15px;
+    }
+
+    #hero button a{
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      color: #284184;
+      transition: 0.3s ease;
     }
 
     /*Estilo en las caracteristicas*/
@@ -780,6 +784,20 @@
       color: #fff;
     }
 
+    .disabled {
+      background-color: #AFB9C8;
+      color: white;
+      cursor: not-allowed;
+      border: none;
+    }
+
+    .disabled:hover{
+      background-color: #AFB9C8;
+      color: white;
+      cursor: not-allowed;
+      border: none;
+    }
+
     /*ESTILO EN PAGINA DE CUENTA*/
 
     .account-page-container{
@@ -991,6 +1009,10 @@
 
     #cart{
       display: none;
+    }
+
+    .header-cart {
+      margin-left: 30px;
     }
 
     #hero {
