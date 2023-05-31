@@ -22,16 +22,16 @@ const productsCart = document.querySelector(".cart-content");
 //El total en precio del carrito
 const totalPrice = document.querySelector(".total-price");
 //Boton de cuenta
-const $btnSignIn= document.querySelector('.sign-in-btn'),
-$btnSignUp = document.querySelector('.sign-up-btn'),  
-$signUp = document.querySelector('.sign-up'),
-$signIn  = document.querySelector('.sign-in');
+const btnSignIn= document.querySelector('.sign-in-btn');
+const btnSignUp = document.querySelector('.sign-up-btn');  
+const signUp = document.querySelector('.sign-up');
+const signIn  = document.querySelector('.sign-in');
 
 //CAMBIO EN REGISTRO/INICIO SESION
 document.addEventListener('click', e => {
-if (e.target === $btnSignIn || e.target === $btnSignUp) {
-  $signIn.classList.toggle('active');
-  $signUp.classList.toggle('active')
+if (e.target === btnSignIn || e.target === btnSignUp) {
+  signIn.classList.toggle('active');
+  signUp.classList.toggle('active')
 }
 });
 
