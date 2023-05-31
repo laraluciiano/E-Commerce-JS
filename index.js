@@ -21,10 +21,19 @@ const emptyBtn = document.querySelector(".btn-empty")
 const productsCart = document.querySelector(".cart-content");
 //El total en precio del carrito
 const totalPrice = document.querySelector(".total-price");
-//  Modal de agregado al carrito.
-const deleteBtn = document.querySelector(".btn-delete");
+//Boton de cuenta
+const $btnSignIn= document.querySelector('.sign-in-btn'),
+$btnSignUp = document.querySelector('.sign-up-btn'),  
+$signUp = document.querySelector('.sign-up'),
+$signIn  = document.querySelector('.sign-in');
 
-
+//CAMBIO EN REGISTRO/INICIO SESION
+document.addEventListener('click', e => {
+if (e.target === $btnSignIn || e.target === $btnSignUp) {
+  $signIn.classList.toggle('active');
+  $signUp.classList.toggle('active')
+}
+});
 
 //GUARDAR EN EL LOCALSTORAGE
 let cart = JSON.parse (localStorage.getItem("cart")) || [];
@@ -254,6 +263,29 @@ const handleQuantity = (e) => {
     checkCartState();
 }
 
+//RESETEO CARRITO
+const resetCartItems = () => {
+    cart = []
+    checkCartState();
+}
+
+
+//BOTON PARA FINALIZAR COMPRA Y VACIAR CARRITO
+const completeCartAction = (confirmMsg, succesMsg) => {
+    if (!cart.length) return;
+    if (window.confirm(confirmMsg)) {
+        resetCartItems()
+        alert(succesMsg)
+    }
+}
+
+const completePurchase = () => {
+    completeCartAction("¿Desea completar su compra?", "¡Gracias por comprar en Vandal's!")
+}
+
+const deleteCart = () => {
+    completeCartAction("¿Desea eliminar su carrito?", "Ya no hay productos en su carrito")
+}
 
 
 const init = () => {
@@ -262,6 +294,8 @@ const init = () => {
 	document.addEventListener("DOMContentLoaded", showTotal);
     products.addEventListener("click", addProduct);
     productsCart.addEventListener("click",handleQuantity);
+    buyBtn.addEventListener("click", completePurchase);
+    emptyBtn.addEventListener("click", deleteCart);
     disableBtn(buyBtn);
     disableBtn(emptyBtn);
 }
